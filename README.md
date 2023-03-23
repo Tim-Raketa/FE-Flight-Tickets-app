@@ -1,6 +1,6 @@
-# hospital-fe
+# Frontend in Angular for Flight tickets application
 
-Uputstvo za pokretanje:
-1. Pozicionirati se u folder repozitorijuma (hospital-fe) u terminalu
-2. _npm install_ da bi se instalirale neophodne zavisnosti
-3. _ng serve_ da bi se pokrenula aplikacija
+Instructions to start up:
+1. In command prompt position yourself to folder FE-Fligt-Tickets-app
+2. _npm install_ to install all the necessary dependencies
+3. _ng serve_ to start the application
