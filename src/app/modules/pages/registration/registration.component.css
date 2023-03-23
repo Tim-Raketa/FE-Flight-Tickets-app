@@ -162,7 +162,12 @@
 }
 
 .wrapper .form .inputfield .btn:hover{
-  background: #0b851e;
+  background: #0b8ea2;
+}
+
+.wrapper .form .inputfield .btn:disabled,
+btn[disabled]{
+  background: #a5aca6;
 }
 
 .wrapper .form .inputfield:last-child{
