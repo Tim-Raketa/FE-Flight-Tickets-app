@@ -1,0 +1,60 @@
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+  
+<body>
+
+  <div class="bgimage">
+    <div class="wrapper">
+
+      <div class="title">
+          Registration form 
+      </div>
+      
+      <div class="form">
+        <form [formGroup]="registerUserForm">
+          
+          <div class="inputfield">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="example@mail.com" formControlName="email" class="input">
+          </div>
+
+          <div class="inputfield">
+            <label>Password</label>
+            <input type="password" name="password" formControlName="password" placeholder="*********" class="input">
+          </div>
+
+          <div class="inputfield">
+            <label for="confirmPassword"> Confirm password </label>
+            <input type="password" name="confirmPassword" formControlName="confirmPassword" placeholder="*********" class="input">
+          </div>
+
+          <div class="inputfield">
+            <label for="name">Name</label>
+            <input type="text" name="name" formControlName="name" class="input">
+          </div>
+
+          <div class="inputfield">
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" formControlName="surname" class="input">
+          </div>
+
+          <div class="inputfield">
+            <label for="jmbg">JMBG</label>
+            <input type="text" name="jmbg" formControlName="jmbg" placeholder="xxxxxxxxxxxxx" class="input">
+          </div>
+
+          <div class="inputfield">
+            <input type="submit" value="Register" class="btn">
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
