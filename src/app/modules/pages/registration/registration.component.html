@@ -1,0 +1,30 @@
+<html>
+  <head> Registration </head>
+  
+  <body>
+  <div class="wrapper">
+    <div class="form">
+
+      <p> Registration form </p>
+      <form [formGroup]="registerUserForm">
+        
+        <mat-form-field appearance="fill">
+          <mat-label for="email">Email</mat-label>
+          <input required [(ngModel)]="registration.email" placeholder="example@email.com" matInput formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input required type="password" formControlName="password" matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm password</mat-label>
+          <input required [(ngModel)]="registration.password" type="password" formControlName="confirmPassword" matInput>
+        </mat-form-field>
+
+      </form>
+    </div>
+  </div>
+  </body>
+</html>
