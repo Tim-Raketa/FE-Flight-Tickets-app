@@ -165,6 +165,11 @@
   background: #0b851e;
 }
 
+.wrapper .form .inputfield .btn:disabled,
+btn[disabled]{
+  background: #a5aca6;
+}
+
 .wrapper .form .inputfield:last-child{
   margin-bottom: 0;
 }

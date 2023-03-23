@@ -18,17 +18,25 @@
         <form [formGroup]="loginUserForm">
           
           <div class="inputfield">
-            <label for="email">Email</label>
-            <input type="text" name="email" placeholder="example@mail.com" formControlName="email" class="input">
+            <label for="email">Email:</label>
+            <input type="text" placeholder="example@mail.com" formControlName="email" class="input">
+          </div>
+          <div class="inputfield">
+          <label></label>
+          <span style="color: red; font-size: medium; font: bold;" *ngIf="email && email.invalid && email.touched"> This email is invalid! </span>
           </div>
 
           <div class="inputfield">
-            <label>Password</label>
+            <label>Password:</label>
             <input type="password" name="password" formControlName="password" placeholder="*********" class="input">
           </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="password && password.invalid && password.touched"> You must enter your password! </span>
+            </div>
 
           <div class="inputfield">
-            <input type="submit" value="Login" class="btn">
+            <button [disabled]="loginUserForm.invalid" class="btn">Login</button>
           </div>
 
           <div class="inputfield">
