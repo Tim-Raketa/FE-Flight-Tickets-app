@@ -6,3 +6,18 @@
     display: grid;
     margin: -8px;
 }
+
+.btn{
+    padding: 8px 10px;
+    font-size: 15px; 
+    border: 0px;
+    background:  #0b851e;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+  }
+  
+.btn:hover{
+    background: #0b8ea2;
+}
