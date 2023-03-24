@@ -32,8 +32,8 @@
           </div>
           <div class="inputfield">
             <label></label>
-            <span style="color: red; font-size: medium; font: bold;" *ngIf="password && password.invalid && password.touched"> You must enter your password! </span>
-            </div>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="password && password.invalid && password.touched"> This password is invalid! </span>
+          </div>
 
           <div class="inputfield">
             <button [disabled]="loginUserForm.invalid" class="btn">Login</button>

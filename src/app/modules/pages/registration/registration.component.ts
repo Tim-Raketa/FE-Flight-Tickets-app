@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { passwordMatch } from '../../custom validators/passwordMatch';
 
 @Component({
   selector: 'app-registration',
@@ -16,7 +17,7 @@ export class RegistrationComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
       surname: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
       jmbg: new FormControl('', [Validators.required, Validators.pattern('[0-9]{13}$')])
-    })
+    }, [ passwordMatch("password", "confirmPassword") ])
 
   constructor(private router: Router) {}
 
