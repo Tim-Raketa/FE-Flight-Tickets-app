@@ -21,39 +21,63 @@
             <label for="email">Email</label>
             <input type="text" name="email" placeholder="example@mail.com" formControlName="email" class="input">
           </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="email && email.invalid && email.touched"> This email is invalid! </span>
+          </div>
 
           <div class="inputfield">
             <label>Password</label>
             <input type="password" name="password" formControlName="password" placeholder="*********" class="input">
+          </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="password && password.invalid && password.touched"> This password is invalid! </span>
           </div>
 
           <div class="inputfield">
             <label for="confirmPassword"> Confirm password </label>
             <input type="password" name="confirmPassword" formControlName="confirmPassword" placeholder="*********" class="input">
           </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="registerUserForm.errors?.['passwordMismatchError']"> Password doesn't match! </span>
+          </div>
 
           <div class="inputfield">
             <label for="name">Name</label>
-            <input type="text" name="name" formControlName="name" class="input">
+            <input type="text" name="name" formControlName="name" placeholder="Name" class="input">
+          </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="name && name.invalid && name.touched"> This name is invalid! </span>
           </div>
 
           <div class="inputfield">
             <label for="surname">Surname</label>
-            <input type="text" name="surname" formControlName="surname" class="input">
+            <input type="text" name="surname" formControlName="surname" placeholder="Surname" class="input">
+          </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="surname && surname.invalid && surname.touched"> This suname is invalid! </span>
           </div>
 
           <div class="inputfield">
             <label for="jmbg">JMBG</label>
             <input type="text" name="jmbg" formControlName="jmbg" placeholder="xxxxxxxxxxxxx" class="input">
           </div>
+          <div class="inputfield">
+            <label></label>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="jmbg && jmbg.invalid && jmbg.touched"> This JMBG is invalid! </span>
+          </div>
 
           <div class="inputfield">
-            <input type="submit" value="Register" class="btn">
+            <button [disabled]="registerUserForm.invalid" class="btn">Register</button>
           </div>
 
           <div class="inputfield">
             <label>Already have an account?</label>
-            <input type="submit" value="Sign in" class="btn">
+            <button class="btn" (click)="goToLogin()"> Sign in </button>
           </div>
 
         </form>
