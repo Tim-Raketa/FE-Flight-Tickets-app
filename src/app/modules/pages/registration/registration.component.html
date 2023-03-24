@@ -18,7 +18,7 @@
         <form [formGroup]="registerUserForm">
           
           <div class="inputfield">
-            <label for="email">Email</label>
+            <label for="email">Email:</label>
             <input type="text" name="email" placeholder="example@mail.com" formControlName="email" class="input">
           </div>
           <div class="inputfield">
@@ -27,7 +27,7 @@
           </div>
 
           <div class="inputfield">
-            <label>Password</label>
+            <label>Password:</label>
             <input type="password" name="password" formControlName="password" placeholder="*********" class="input">
           </div>
           <div class="inputfield">
@@ -36,7 +36,7 @@
           </div>
 
           <div class="inputfield">
-            <label for="confirmPassword"> Confirm password </label>
+            <label for="confirmPassword"> Confirm password: </label>
             <input type="password" name="confirmPassword" formControlName="confirmPassword" placeholder="*********" class="input">
           </div>
           <div class="inputfield">
@@ -45,7 +45,7 @@
           </div>
 
           <div class="inputfield">
-            <label for="name">Name</label>
+            <label for="name">Name:</label>
             <input type="text" name="name" formControlName="name" placeholder="Name" class="input">
           </div>
           <div class="inputfield">
@@ -54,16 +54,16 @@
           </div>
 
           <div class="inputfield">
-            <label for="surname">Surname</label>
+            <label for="surname">Surname:</label>
             <input type="text" name="surname" formControlName="surname" placeholder="Surname" class="input">
           </div>
           <div class="inputfield">
             <label></label>
-            <span style="color: red; font-size: medium; font: bold;" *ngIf="surname && surname.invalid && surname.touched"> This suname is invalid! </span>
+            <span style="color: red; font-size: medium; font: bold;" *ngIf="surname && surname.invalid && surname.touched"> This surname is invalid! </span>
           </div>
 
           <div class="inputfield">
-            <label for="jmbg">JMBG</label>
+            <label for="jmbg">JMBG:</label>
             <input type="text" name="jmbg" formControlName="jmbg" placeholder="xxxxxxxxxxxxx" class="input">
           </div>
           <div class="inputfield">
