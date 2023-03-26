@@ -73,6 +73,7 @@ export class RegistrationComponent implements OnInit {
     this.service.submit(user).subscribe(res => {
       console.log(res);
       alert("Registration completed.");
+      this.registerUserForm.reset( { } );
     }, error => 
     {
       console.log(error)
