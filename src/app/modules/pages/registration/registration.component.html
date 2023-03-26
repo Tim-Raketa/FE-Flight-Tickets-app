@@ -72,19 +72,17 @@
           </div>
 
           <div class="inputfield">
-            <button [disabled]="registerUserForm.invalid" class="btn">Register</button>
+            <button [disabled]="registerUserForm.invalid" class="btn" (click)="register()">Register</button>
           </div>
-
-          <div class="inputfield">
-            <label>Already have an account?</label>
-            <button class="btn" (click)="goToLogin()"> Sign in </button>
-          </div>
-
-          <div class="inputfield">
-            <button class="btn" (click)="goToHome()">Return to home</button>
-          </div>
-
         </form>
+        <div class="inputfield">
+          <label>Already have an account?</label>
+          <button class="btn" (click)="goToLogin()"> Sign in </button>
+        </div>
+
+        <div class="inputfield">
+          <button class="btn" (click)="goToHome()">Return to home</button>
+        </div>
       </div>
     </div>
   </div>
