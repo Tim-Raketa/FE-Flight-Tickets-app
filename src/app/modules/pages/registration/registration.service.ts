@@ -12,7 +12,7 @@ export class RegistrationService {
   headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) { }
   
-  submit(registeringUser: UserDTO): Observable<UserDTO> {
-    return this.http.post<UserDTO>(this.route + 'users/register', registeringUser, {headers: this.headers});
+  submit(registeringUser: UserDTO): Observable<Boolean> {
+    return this.http.post<Boolean>(this.route + 'users/register', registeringUser, {headers: this.headers});
   }
 }

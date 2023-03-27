@@ -72,8 +72,12 @@ export class RegistrationComponent implements OnInit {
     }
     this.service.submit(user).subscribe(res => {
       console.log(res);
+      if (res === true) {
       alert("Registration completed.");
       this.registerUserForm.reset( { } );
+      } else {
+      alert("Email already exists, try another.");
+      }
     }, error => 
     {
       console.log(error)
