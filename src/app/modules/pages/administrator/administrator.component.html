@@ -9,11 +9,11 @@
         <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="begin">
                 <th mat-header-cell *matHeaderCellDef class="cell-center"> Begin </th>
-                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.begin}}</td>
+                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.begin | date:'short'}}</td>
             </ng-container>
             <ng-container matColumnDef="end">
                 <th mat-header-cell *matHeaderCellDef class="cell-center"> End </th>
-                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.end}}</td>
+                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.end | date:'short'}}</td>
             </ng-container>
             <ng-container matColumnDef="startingPlace">
                 <th mat-header-cell *matHeaderCellDef class="cell-center"> Start </th>
