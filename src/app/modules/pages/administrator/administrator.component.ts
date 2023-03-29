@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Flight } from '../../model/flight.model';
+import { FlightService } from '../../services/flight.service';
 
 @Component({
   selector: 'app-administrator',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministratorComponent implements OnInit {
 
-  constructor() { }
+  public dataSource = new MatTableDataSource<Flight>();
+  public displayedColumns = ['begin', 'end', 'startingPlace', 'destination','maxSeats','freeSeats', 'seatPrice', 'delete'];
+  public flights: Flight[] = [];
 
-  ngOnInit() {
+  constructor(private flightService: FlightService) { }
+
+  ngOnInit(): void {
+   this.flightService.getFlights().subscribe(res =>{
+    this.flights = res;
+    this.dataSource.data = res;
+   })
+  }
+
+  public addFlight() {
+
+  }
+
+  public deleteFlight(id: number){
+
   }
 
 }
