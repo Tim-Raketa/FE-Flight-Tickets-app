@@ -28,7 +28,12 @@ export class AdministratorComponent implements OnInit {
   }
 
   public deleteFlight(id: number){
-
+    this.flightService.deleteFlight(id).subscribe(res =>{
+      this.flightService.getFlights().subscribe(res =>{
+        this.flights = res;
+        this.dataSource.data = res;
+       })
+    })
   }
 
 }
