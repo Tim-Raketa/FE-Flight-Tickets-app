@@ -4,6 +4,7 @@ import { FlightDTO } from '../../model/flightDTO';
 import { FlightSearchDTO } from '../../model/flightSearchDTO';
 import { FlightService } from '../../services/flight.service';
 import { FormControl } from '@angular/forms';
+import { newTicketDTO } from '../../model/newTickerDTO';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class RegularUserComponent implements OnInit {
   public displayedColumns = ['dateTime', 'startingLocation', 'destination','pricePerPerson','totalPrice','buy'];
   public flights: FlightDTO[] = [];
   public search: FlightSearchDTO = new FlightSearchDTO();
+  public ticket: newTicketDTO = new newTicketDTO();
 
 
   constructor(private flightService: FlightService) { }
@@ -31,9 +33,7 @@ export class RegularUserComponent implements OnInit {
     this.search.numberOfPeople=0;
     this.selected=1;
   }
-  public buyTicket(id: number){
-
-  }
+  
   public searchFlights(form: FlightSearchDTO){
     let a=this.date.value as Date;
     a.setHours(a.getHours() +3)
@@ -44,4 +44,10 @@ export class RegularUserComponent implements OnInit {
       this.dataSource.data = res;
      })
   }
+  public buyTicket(flight:number){
+    this.ticket.flightId=flight;
+    this.ticket.numberOfPeople=this.selected;
+    this.flightService.BuyTicket(this.ticket);
+  }
+
 }

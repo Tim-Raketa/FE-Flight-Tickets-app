@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Flight } from '../model/flight.model';
 import { FlightSearchDTO } from '../model/flightSearchDTO';
 import { FlightDTO } from '../model/flightDTO';
+import { newTicketDTO } from '../model/newTickerDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,8 @@ export class FlightService {
   }
   searchFlights(flightSearchDTO: FlightSearchDTO): Observable<FlightDTO[]> {
     return this.http.post<FlightDTO[]>(this.route + 'Flights/search',flightSearchDTO, {headers: this.headers});
+  }
+  BuyTicket(NewTickerDTO: newTicketDTO): Observable<boolean> {
+    return this.http.post<boolean>(this.route + 'Tickets/buy/ticket',NewTickerDTO, {headers: this.headers});
   }
 }
