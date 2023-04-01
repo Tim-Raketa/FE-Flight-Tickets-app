@@ -1,4 +1,4 @@
-export class newTicketDTO {
+export class TicketDTO {
     flightId: number = 0;
     numberOfPeople: number = 0;
     ticketId:number=0;
