@@ -47,7 +47,9 @@ export class RegularUserComponent implements OnInit {
   public buyTicket(flight:number){
     this.ticket.flightId=flight;
     this.ticket.numberOfPeople=this.selected;
-    this.flightService.BuyTicket(this.ticket);
+    this.flightService.BuyTicket(this.ticket).subscribe(res =>{
+      let test=res;
+    })
   }
 
 }
