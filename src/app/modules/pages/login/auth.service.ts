@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from '../../model/login';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,14 @@ export class AuthService {
   apiHost: string = 'http://localhost:8084';
   headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient, private router: Router) { }
 
 login(login:Login): Observable<any> {
   return this.http.post<Login>(this.apiHost + '/auth/login', login);
+}
+
+getLoggedInUser():Observable<any>{
+  return this.http.get<void>(this.apiHost + '/auth/loggedInUser', { headers: this.headers });
 }
 
 isAuthorized(allowedRoles: string[]): boolean {
@@ -28,6 +33,12 @@ isAuthorized(allowedRoles: string[]): boolean {
 
 // check if the user roles is in the list of allowed roles, return true if allowed and false if not allowed
   return allowedRoles.includes(role!);
+}
+
+logout(){
+  localStorage.removeItem('token');
+  localStorage.removeItem('role');
+  this.router.navigate(['/']);
 }
 
 }
