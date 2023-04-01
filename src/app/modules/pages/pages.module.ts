@@ -7,6 +7,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { RegularUserComponent } from './regular-user/regular-user.component';
 import { AdministratorComponent } from './administrator/administrator.component';
+import { CreateFlightComponent } from './administrator/create-flight/create-flight.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AdministratorComponent } from './administrator/administrator.component'
     RegistrationComponent,
     LoginComponent,
     RegularUserComponent,
-    AdministratorComponent
+    AdministratorComponent,
+    CreateFlightComponent
   ],
   imports: [
     CommonModule,

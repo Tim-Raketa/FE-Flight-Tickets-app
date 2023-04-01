@@ -20,4 +20,14 @@ export class FlightService {
   deleteFlight(id: any): Observable<any> {
     return this.http.delete<any>(this.route + 'Flights/delete/' + id, {headers: this.headers});
   }
+
+  /*
+  submit(registeringUser: UserDTO): Observable<Boolean> {
+    return this.http.post<Boolean>(this.route + 'users/register', registeringUser, {headers: this.headers});
+  }
+  */
+
+  createFlight(flight: Flight): Observable<String> {
+    return this.http.post<String>(this.route + 'Flights/addFlight', flight, {headers: this.headers});
+  }
 }

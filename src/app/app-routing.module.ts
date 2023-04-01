@@ -5,6 +5,7 @@ import { RegistrationComponent } from "./modules/pages/registration/registration
 import { LoginComponent } from "./modules/pages/login/login.component";
 import { RegularUserComponent } from "./modules/pages/regular-user/regular-user.component";
 import { AdministratorComponent } from "./modules/pages/administrator/administrator.component";
+import { CreateFlightComponent } from "./modules/pages/administrator/create-flight/create-flight.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'regularUser', component: RegularUserComponent },
   { path: 'administrator', component: AdministratorComponent },
+  { path: 'administrator/createFlight', component: CreateFlightComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
