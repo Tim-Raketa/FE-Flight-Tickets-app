@@ -12,6 +12,7 @@ import { AdministratorComponent } from './administrator/administrator.component'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { TicketInfoComponent } from './ticket-info/ticket-info.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     RegistrationComponent,
     LoginComponent,
     RegularUserComponent,
-    AdministratorComponent
+    AdministratorComponent,
+    TicketInfoComponent
   ],
   imports: [
     CommonModule,
