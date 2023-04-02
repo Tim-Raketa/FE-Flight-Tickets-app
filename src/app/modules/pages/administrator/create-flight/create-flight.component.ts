@@ -16,8 +16,8 @@ export class CreateFlightComponent implements OnInit {
     beginTime: new FormControl('', Validators.required),
     endDate: new FormControl('', Validators.required),
     endTime: new FormControl('', Validators.required),
-    startingPlace: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
-    destination: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
+    startingPlace: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]),
+    destination: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]),
     maxSeats:  new FormControl('', [Validators.required, Validators.pattern('[0-9]+$')]),
     seatPrice: new FormControl('', [Validators.required, Validators.pattern('[0-9]+$')])
   })
@@ -122,12 +122,12 @@ export class CreateFlightComponent implements OnInit {
     this.isValidDate = true;
   
     if((sDate != null && eDate !=null) && (eDate) <= (sDate)){
-      this.error={isError:true,errorMessage:'End date should be greater then start date!'};
+      this.error={isError:true,errorMessage:'End date should be greater than start date!'};
       this.isValidDate = false;
     }
 
     let today = new Date();
-    if((sDate <= today) && (eDate <= today)){
+    if((sDate <= today) || (eDate <= today)){
       this.error={isError:true,errorMessage:'Cannot create flight in past!'};
       this.isValidDate = false;
     }
