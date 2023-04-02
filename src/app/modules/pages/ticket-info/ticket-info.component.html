@@ -1,7 +1,10 @@
 <div class="bgimage">
+    <div>
+        <button class="btn" (click)="logout()"> Logout </button>
+        </div>
     <div class="container">
         <div class="table-header">
-            <p class="table-title">Ticket-Info</p>
+            <p class="table-title">Ticket Information</p>
         </div>
         <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="startDate">
@@ -9,7 +12,7 @@
                 <td mat-cell *matCellDef="let ticket" class="cell-center">{{ticket.dateTime | date:'short'}}</td>
             </ng-container>
             <ng-container matColumnDef="startingLocation">
-                <th mat-header-cell *matHeaderCellDef class="cell-center"> StartingLocation </th>
+                <th mat-header-cell *matHeaderCellDef class="cell-center"> Starting Location </th>
                 <td mat-cell *matCellDef="let ticket" class="cell-center">{{ticket.startingLocation}}</td>
             </ng-container>
             <ng-container matColumnDef="destination">

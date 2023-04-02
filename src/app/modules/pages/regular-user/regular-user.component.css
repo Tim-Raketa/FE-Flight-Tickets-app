@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+.btn:hover{
+    background: #0b8ea2;
+}
+
 table {
     width: 100%;
 }

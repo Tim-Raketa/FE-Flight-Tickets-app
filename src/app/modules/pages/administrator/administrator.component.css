@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.btn:hover{
+    background: #0b8ea2;
+}
+
 .bgimage{
     background-image: url('../../photographs/top-view-white-plane-green-background.jpg');
     background-size: cover;
@@ -17,12 +21,13 @@
 }
 
 .container {
-    width: 50%;
+    width: 75%;
     margin: auto;
     margin-top: 20px;
     border-radius: 3px;
     border: #DCD6CC 1px solid;
     background-color: white;
+    background: rgba(255,255,255,0.4);
 }
 
 table {
