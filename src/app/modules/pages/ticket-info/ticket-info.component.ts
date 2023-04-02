@@ -18,6 +18,10 @@ export class TicketInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.flightService.getTicket().subscribe(res =>{
+        this.tickets=res;
+        this.dataSource.data=res;
+    })
   }
 
   logout() {

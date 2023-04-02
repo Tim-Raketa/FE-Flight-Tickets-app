@@ -5,6 +5,7 @@ import { Flight } from '../model/flight.model';
 import { FlightSearchDTO } from '../model/flightSearchDTO';
 import { FlightDTO } from '../model/flightDTO';
 import { newTicketDTO } from '../model/newTickerDTO';
+import { TicketDTO } from '../model/ticketDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,8 @@ export class FlightService {
   createFlight(flight: Flight): Observable<String> {
     return this.http.post<String>(this.route + 'Flights/addFlight', flight, {headers: this.headers});
 
+  }
+  getTicket(): Observable<TicketDTO[]> {
+    return this.http.get<TicketDTO[]>(this.route + 'Tickets/user', {headers: this.headers});
   }
 }
