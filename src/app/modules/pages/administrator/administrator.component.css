@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .bgimage{
     background-image: url('../../photographs/top-view-white-plane-green-background.jpg');
     background-size: cover;

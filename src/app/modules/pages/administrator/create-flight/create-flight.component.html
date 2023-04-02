@@ -1,0 +1,97 @@
+<div class="bgimage">
+    <div class="wrapper">
+
+        <div class="title">
+            Add Flight  
+        </div>
+        
+        <div class="form">
+          <form [formGroup]="createFlightForm">
+  
+            <div class="inputfield">
+              <label for="startingPlace">Starting Place:</label>
+              <input type="text" name="startingPlace" formControlName="startingPlace" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="startingPlace && startingPlace.invalid && startingPlace.touched"> This word is invalid! </span>
+            </div>
+
+            <div class="inputfield">
+              <label for="beginDate">Start Date:</label>
+              <input type="date" name="beginDate" formControlName="beginDate" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="beginDate && beginDate.invalid && beginDate.touched"> This word is invalid! </span>
+            </div>
+
+            <div class="inputfield">
+              <label for="beginTime">Start Time:</label>
+              <input type="time" name="beginTime" formControlName="beginTime" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="beginTime && beginTime.invalid && beginTime.touched"> This time is invalid! </span>
+            </div>
+  
+            <div class="inputfield">
+              <label for="destination">Destination:</label>
+              <input type="text" name="destination" formControlName="destination" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="destination && destination.invalid && destination.touched"> This date is invalid! </span>
+            </div>
+
+            <div class="inputfield">
+              <label for="endDate">End Date:</label>
+              <input type="date" name="endDate" formControlName="endDate" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="endDate && endDate.invalid && endDate.touched"> This date is invalid! </span>
+            </div>
+
+            <div class="inputfield">
+              <label for="endTime">End Time:</label>
+              <input type="time" name="endTime" formControlName="endTime" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="endTime && endTime.invalid && endTime.touched"> This time is invalid! </span>
+            </div>
+  
+            <div class="inputfield">
+              <label for="maxSeats">Max Seats:</label>
+              <input type="text" name="maxSeats" formControlName="maxSeats" placeholder="" class="input">
+            </div>
+            <div class="inputfield">
+              <label></label>
+              <span style="color: red; font-size: medium; font: bold;" *ngIf="maxSeats && maxSeats.invalid && maxSeats.touched"> This number is invalid! </span>
+            </div>
+
+            <div class="inputfield">
+                <label for="seatPrice">Seat Price:</label>
+                <input type="text" name="seatPrice" formControlName="seatPrice" placeholder="" class="input">
+              </div>
+              <div class="inputfield">
+                <label></label>
+                <span style="color: red; font-size: medium; font: bold;" *ngIf="seatPrice && seatPrice.invalid && seatPrice.touched"> This number is invalid! </span>
+              </div>
+
+            <div style="color: red; font-size: medium; font: bold;" *ngIf="error.isError">{{error.errorMessage}}</div>
+  
+            <div class="inputfield">
+              <button [disabled]="createFlightForm.invalid" class="btn" (click)="createFlight()">Submit</button>
+            </div>
+          </form>
+          <br>
+          
+  
+          <div class="inputfield">
+            <button class="btn" (click)="goBack()">Cancel</button>
+          </div>
+        </div>
+      </div>
+</div>
