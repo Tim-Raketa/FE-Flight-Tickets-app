@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../login/auth.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { FlightDTO } from '../../model/flightDTO';
 import { FlightSearchDTO } from '../../model/flightSearchDTO';
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit {
   public search: FlightSearchDTO = new FlightSearchDTO();
   public ticket: newTicketDTO = new newTicketDTO();
   
-  constructor(private flightService: FlightService, private router: Router, private authService: AuthService) { }
+  constructor(private flightService: FlightService, private router: Router) { }
 
   ngOnInit(): void {
     this.search.date=new Date().toISOString();
@@ -52,8 +51,5 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/registration');
   };
 
-  logout() {
-    this.authService.logout();
-  }
 
 }
