@@ -5,6 +5,8 @@ import { FlightSearchDTO } from '../../model/flightSearchDTO';
 import { FlightService } from '../../services/flight.service';
 import { FormControl } from '@angular/forms';
 import { newTicketDTO } from '../../model/newTickerDTO';
+import { Router } from '@angular/router';
+import { AuthService } from '../login/auth.service';
 
 
 @Component({
@@ -25,7 +27,7 @@ export class RegularUserComponent implements OnInit {
   public ticket: newTicketDTO = new newTicketDTO();
 
 
-  constructor(private flightService: FlightService) { }
+  constructor(private flightService: FlightService, private router: Router, private authService: AuthService) { }
 
   ngOnInit():void {
     this.search.date=new Date().toISOString();
@@ -55,6 +57,12 @@ export class RegularUserComponent implements OnInit {
       } else
       alert("Something went wrong during your booking");
     })
+  }
+  public UsersTickets(){
+    this.router.navigate(['regularUser/tickets']);
+  }
+  logout() {
+    this.authService.logout();
   }
 
 }

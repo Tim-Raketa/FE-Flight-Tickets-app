@@ -1,0 +1,72 @@
+.bgimage{
+    background-image: url('../../photographs/top-view-white-plane-green-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: grid;
+    margin: -8px;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: #DCD6CC 1px solid;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+}
+
+.table-title {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+
+}
+
+.cell-center {
+    text-align: center;
+}
+
+.clickable:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-button {
+    margin: 10px 20px 10px 10px;
+    color: black;
+    background-color: #edece5;
+    float: right;
+}
+
+.table-header {
+    display: flex;
+}
+
+p {
+    float: left;
+    margin-right: auto;
+}
+::ng-deep .example-form-field {
+    margin-right: 20px;
+    height: 100px!important;
+}
+::ng-deep .date-form-field {
+    margin-right: 20px;
+    box-sizing:20%!important;
+}
+.btn{
+    padding: 8px 10px;
+    font-size: 15px; 
+    border: 0px;
+    background:  #0b851e;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+  }
