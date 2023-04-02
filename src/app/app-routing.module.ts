@@ -7,6 +7,7 @@ import { RegularUserComponent } from "./modules/pages/regular-user/regular-user.
 import { AdministratorComponent } from "./modules/pages/administrator/administrator.component";
 import { CreateFlightComponent } from "./modules/pages/administrator/create-flight/create-flight.component";
 import { AuthorizationGuard } from "./modules/pages/login/authorization.guard";
+import { TicketInfoComponent } from "./modules/pages/ticket-info/ticket-info.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,6 +24,10 @@ const routes: Routes = [
       allowedRoles: ['ROLE_USER']
     },
     canActivate: [AuthorizationGuard]},
+  { path: 'regularUser/tickets', component: TicketInfoComponent,
+     data: {
+      allowedRoles: ['ROLE_USER']
+  }, },
   { path: 'administrator', component: AdministratorComponent,
     data: {
     allowedRoles: ['ROLE_ADMIN']
