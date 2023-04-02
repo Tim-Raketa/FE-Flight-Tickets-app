@@ -75,12 +75,14 @@ export class CreateFlightComponent implements OnInit {
     console.log(beginTime)
     console.log(typeof(beginTime))
     let begin = new Date(beginDate + "T" + beginTime + ":00");
+    begin.setHours(begin.getHours() + 2);
 
     let endDate = this.createFlightForm.get("endDate")?.value
     let endTime = this.createFlightForm.get("endTime")?.value
     console.log(endDate)
     console.log(endTime)
     let end = new Date(endDate + "T" + endTime + ":00");
+    end.setHours(end.getHours() + 2);
 
     this.isValidDate = this.validateDates(begin, end);
 
