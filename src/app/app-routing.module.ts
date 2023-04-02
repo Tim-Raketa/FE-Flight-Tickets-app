@@ -13,26 +13,26 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'administrator/createFlight', component: CreateFlightComponent,
-    data: {
-      allowedRoles: ['ROLE_ADMIN']
-    },
-    canActivate: [AuthorizationGuard] },
-
-  { path: 'regularUser', component: RegularUserComponent,
-    data: {
-      allowedRoles: ['ROLE_USER']
-    },
-    canActivate: [AuthorizationGuard]},
-  { path: 'regularUser/tickets', component: TicketInfoComponent,
-     data: {
-      allowedRoles: ['ROLE_USER']
-  }, },
-  { path: 'administrator', component: AdministratorComponent,
-    data: {
-    allowedRoles: ['ROLE_ADMIN']
+  {
+    path: 'administrator/createFlight', component: CreateFlightComponent,
+    data: { allowedRoles: ['ROLE_ADMIN'] },
+    canActivate: [AuthorizationGuard] 
   },
-  canActivate: [AuthorizationGuard]},
+  { 
+    path: 'regularUser', component: RegularUserComponent,
+    data: { allowedRoles: ['ROLE_USER'] },
+    canActivate: [AuthorizationGuard]
+  },
+  { 
+    path: 'regularUser/tickets', component: TicketInfoComponent,
+    data: { allowedRoles: ['ROLE_USER'] },
+    canActivate: [AuthorizationGuard]
+  },
+  { 
+    path: 'administrator', component: AdministratorComponent,
+    data: { allowedRoles: ['ROLE_ADMIN'] },
+    canActivate: [AuthorizationGuard]
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
