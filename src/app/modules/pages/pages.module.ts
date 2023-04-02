@@ -13,7 +13,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { TicketInfoComponent } from './ticket-info/ticket-info.component';
-
+import { CreateFlightComponent } from './administrator/create-flight/create-flight.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { TicketInfoComponent } from './ticket-info/ticket-info.component';
     LoginComponent,
     RegularUserComponent,
     AdministratorComponent,
-    TicketInfoComponent
+    TicketInfoComponent,
+    CreateFlightComponent
   ],
   imports: [
     CommonModule,

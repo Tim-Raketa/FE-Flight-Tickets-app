@@ -24,5 +24,14 @@ export class FlightService {
   }
   BuyTicket(NewTickerDTO: newTicketDTO): Observable<boolean> {
     return this.http.post<boolean>(this.route + 'Tickets/buy/ticket',NewTickerDTO, {headers: this.headers});
+
+
+  deleteFlight(id: any): Observable<any> {
+    return this.http.delete<any>(this.route + 'Flights/delete/' + id, {headers: this.headers});
+  }
+
+  createFlight(flight: Flight): Observable<String> {
+    return this.http.post<String>(this.route + 'Flights/addFlight', flight, {headers: this.headers});
+
   }
 }
