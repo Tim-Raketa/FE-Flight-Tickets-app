@@ -12,11 +12,18 @@ import { FlightService } from 'src/app/modules/services/flight.service';
 export class CreateFlightComponent implements OnInit {
 
   createFlightForm = new FormGroup({
+    beginDate: new FormControl('', Validators.required),
+    beginTime: new FormControl('', Validators.required),
+    endDate: new FormControl('', Validators.required),
+    endTime: new FormControl('', Validators.required),
     startingPlace: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
     destination: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
     maxSeats:  new FormControl('', [Validators.required, Validators.pattern('[0-9]+$')]),
     seatPrice: new FormControl('', [Validators.required, Validators.pattern('[0-9]+$')])
   })
+
+  error:any={isError:false,errorMessage:''};
+  isValidDate:any;
 
   constructor(private router: Router, private flightService: FlightService) { }
 
@@ -36,6 +43,22 @@ export class CreateFlightComponent implements OnInit {
     return this.createFlightForm.get('seatPrice');
   }
 
+  get beginDate(){
+    return this.createFlightForm.get('beginDate');
+  }
+
+  get beginTime(){
+    return this.createFlightForm.get('beginTime');
+  }
+
+  get endDate(){
+    return this.createFlightForm.get('endDate');
+  }
+
+  get endTime(){
+    return this.createFlightForm.get('endTime');
+  }
+
   ngOnInit(): void {
   }
 
@@ -44,8 +67,22 @@ export class CreateFlightComponent implements OnInit {
   };
 
   createFlight =  () => {
-    let begin = new Date("2023-04-02T10:15:30");
-    let end = new Date("2023-04-02T13:15:30");
+    
+    let beginDate = this.createFlightForm.get("beginDate")?.value
+    let beginTime = this.createFlightForm.get("beginTime")?.value
+    console.log(beginDate)
+    console.log(typeof(beginDate))
+    console.log(beginTime)
+    console.log(typeof(beginTime))
+    let begin = new Date(beginDate + "T" + beginTime + ":00");
+
+    let endDate = this.createFlightForm.get("endDate")?.value
+    let endTime = this.createFlightForm.get("endTime")?.value
+    console.log(endDate)
+    console.log(endTime)
+    let end = new Date(endDate + "T" + endTime + ":00");
+
+    this.isValidDate = this.validateDates(begin, end);
 
     let startingPlace = this.createFlightForm.get("startingPlace")?.value
     let destination = this.createFlightForm.get("destination")?.value
@@ -65,16 +102,35 @@ export class CreateFlightComponent implements OnInit {
 
     console.log(flight);
 
-    this.flightService.createFlight(flight).subscribe(res =>{
-      console.log(res);
-    }, error => 
-    {
-      console.log(error)
+    if(this.isValidDate){
+      this.flightService.createFlight(flight).subscribe(res =>{
+        console.log(res);
+        this.router.navigateByUrl('/administrator');
+      }, error => 
+      {
+        console.log(error)
+      }
+      );
+  
     }
-    );
-
-    this.router.navigateByUrl('/administrator');
-
+    
   };
+
+  validateDates(sDate: Date, eDate: Date){
+    this.isValidDate = true;
+  
+    if((sDate != null && eDate !=null) && (eDate) <= (sDate)){
+      this.error={isError:true,errorMessage:'End date should be greater then start date!'};
+      this.isValidDate = false;
+    }
+
+    let today = new Date();
+    if((sDate <= today) && (eDate <= today)){
+      this.error={isError:true,errorMessage:'Cannot create flight in past!'};
+      this.isValidDate = false;
+    }
+
+    return this.isValidDate;
+  }
 
 }
