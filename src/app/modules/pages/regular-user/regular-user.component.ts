@@ -18,8 +18,7 @@ export class RegularUserComponent implements OnInit {
   selected= 1;
   public datepicker:Date=new Date();
 
-  date = new FormControl(new Date());
-
+  public date:string="";
   public dataSource = new MatTableDataSource<FlightDTO>();
   public displayedColumns = ['dateTime', 'startingLocation', 'destination','pricePerPerson','totalPrice','buy'];
   public flights: FlightDTO[] = [];
@@ -37,7 +36,7 @@ export class RegularUserComponent implements OnInit {
   }
   
   public searchFlights(form: FlightSearchDTO){
-    let a=this.date.value as Date;
+    let a = new Date(this.date);
     a.setHours(a.getHours() +3)
     this.search.date=a.toISOString();
     this.search.numberOfPeople=this.selected;
