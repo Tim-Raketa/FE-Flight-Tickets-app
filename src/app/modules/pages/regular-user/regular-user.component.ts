@@ -48,7 +48,12 @@ export class RegularUserComponent implements OnInit {
     this.ticket.flightId=flight;
     this.ticket.numberOfPeople=this.selected;
     this.flightService.BuyTicket(this.ticket).subscribe(res =>{
-      let test=res;
+      if(res) 
+      {
+      alert("You have succesfuly booked your ticket");
+      this.dataSource.data=[];
+      } else
+      alert("Something went wrong during your booking");
     })
   }
 
