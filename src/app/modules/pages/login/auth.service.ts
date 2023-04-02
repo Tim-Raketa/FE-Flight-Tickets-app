@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  apiHost: string = 'http://localhost:8084';
+  apiHost: string = 'http://localhost:8080';
   headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
 constructor(private http: HttpClient, private router: Router) { }
