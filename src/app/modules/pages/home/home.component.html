@@ -52,12 +52,12 @@
                 <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.destination}}</td>
             </ng-container>
             <ng-container matColumnDef="pricePerPerson">
-                <th mat-header-cell *matHeaderCellDef class="cell-center"> Price per person </th>
-                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.pricePerPerson}}</td>
+                <th mat-header-cell *matHeaderCellDef class="cell-center"> Price per person (€) </th>
+                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.pricePerPerson}} €</td>
             </ng-container>
             <ng-container matColumnDef="totalPrice">
-                <th mat-header-cell *matHeaderCellDef class="cell-center"> Total price </th>
-                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.totalPrice}}</td>
+                <th mat-header-cell *matHeaderCellDef class="cell-center"> Total price (€)</th>
+                <td mat-cell *matCellDef="let flight" class="cell-center">{{flight.totalPrice}} €</td>
             </ng-container>
             
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
