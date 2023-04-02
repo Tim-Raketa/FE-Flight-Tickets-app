@@ -8,7 +8,7 @@ import { UserDTO } from '../../model/UserDTO';
 })
 export class RegistrationService {
 
-  route: string = 'http://localhost:8084/';
+  route: string = 'http://localhost:8080/';
   headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) { }
   
