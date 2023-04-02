@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Flight } from '../../model/flight.model';
 import { FlightService } from '../../services/flight.service';
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-administrator',
@@ -15,7 +16,7 @@ export class AdministratorComponent implements OnInit {
   public displayedColumns = ['begin', 'end', 'startingPlace', 'destination','maxSeats','freeSeats', 'seatPrice', 'delete'];
   public flights: Flight[] = [];
 
-  constructor(private flightService: FlightService, private router: Router) { }
+  constructor(private flightService: FlightService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
    this.flightService.getFlights().subscribe(res =>{
@@ -35,6 +36,10 @@ export class AdministratorComponent implements OnInit {
         this.dataSource.data = res;
        })
     })
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

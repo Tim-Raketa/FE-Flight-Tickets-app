@@ -13,7 +13,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'administrator/createFlight', component: CreateFlightComponent },
+  { path: 'administrator/createFlight', component: CreateFlightComponent,
+    data: {
+      allowedRoles: ['ROLE_ADMIN']
+    },
+    canActivate: [AuthorizationGuard] },
 
   { path: 'regularUser', component: RegularUserComponent,
     data: {
