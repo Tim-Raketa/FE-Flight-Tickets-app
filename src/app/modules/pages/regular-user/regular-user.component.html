@@ -8,10 +8,10 @@
             <p class="table-title">Flights</p>
         </div>
         <div>
-        <div class="inputfield">
-                <label for="beginDate">Start Date:</label>
-                <input type="date" name="beginDate" [(ngModel)]="date" placeholder="" class="input">
-        </div>      
+        <mat-form-field appearance="fill" class="example-form-field">
+            <mat-label for="beginDate">Start Date:</mat-label>
+            <input matInput type="date" name="beginDate" [(ngModel)]="date" placeholder="" class="input">
+        </mat-form-field>    
         
         <mat-form-field appearance="fill" class="example-form-field">
             <mat-label>Starting Location</mat-label>
